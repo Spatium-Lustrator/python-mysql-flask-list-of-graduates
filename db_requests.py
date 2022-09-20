@@ -6,7 +6,7 @@ class Requester:
         conn = mysql.connector.connect(
             user='tomka',
             password='ieyah',
-            host='192.168.0.22',
+            host='192.168.0.19',
             database='db',
         )
 
@@ -19,7 +19,7 @@ class Requester:
             cursor.execute(get_query)
 
         conn.close()
-        return cursor.rowcount
+        return cursor.fetchone()
 
     def return_list_of_values_from_bd(self):
         conn = self.make_connection()
